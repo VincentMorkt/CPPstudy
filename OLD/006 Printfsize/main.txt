@@ -1,0 +1,6 @@
+
+
+
+    int a;
+    printf("it's not realy eazy...%n", &a);  
+    printf("\n%d\n",a);
