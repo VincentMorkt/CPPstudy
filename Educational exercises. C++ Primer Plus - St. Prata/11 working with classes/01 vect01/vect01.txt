@@ -1,0 +1,7 @@
+After 198 steps, the subject has the following location: 
+(x, y) = (-16.9185, 15.8176)
+or
+(m, a) = (23.161, 136.926)
+
+Average outward distance per step = 0.116975
+
