@@ -23,11 +23,18 @@ bool palindrom(std::string str);
 int main()
 {
     using namespace std;
-    cout << "enter your word <q to quit>: ";
+    cout << "enter your word or frase<q to quit>: ";
     string word;
     getline(cin, word);
     while (!(tolower(word[0]) == 'q' && word[1] == '\0'))
     {
+        if (word.size() == 0)
+        {
+            cout << "I SAY ENTER SOMETHING MOTHERFUCKER<q to quit>: ";
+            cin >> word;
+            continue;
+        }
+
         if (palindrom(word))
             cout << "It's palindrom! TENET, YOU UNDERSTAND?\?!\n\n";
         else
@@ -53,6 +60,8 @@ bool palindrom(std::string str)
     }
     i = 0;
     int size = str.size();
+    if (size == 0);
+        return 0;
     for (i; i < --size; i++) // --size - последний символ строки, каждая следующая проверка требует переход к предыдущему символу
     {
         if (tolower(str[i]) != tolower(str[size]))

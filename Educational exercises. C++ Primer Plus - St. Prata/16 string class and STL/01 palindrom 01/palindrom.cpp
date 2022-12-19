@@ -16,11 +16,17 @@ bool palindrom(std::string str);
 int main()
 {
     using namespace std;
-    cout << "enter your word <q to quit>: ";
+    cout << "enter your word<q to quit>: ";
     string word;
     cin >> word;
     while (!(tolower(word[0]) == 'q' && word[1] == '\0'))
     {
+        if (word.size() == 0)
+        {
+            cout << "I SAY ENTER SOMETHING MOTHERFUCKER<q to quit>: ";
+            cin >> word;
+            continue;
+        }
         if (palindrom(word))
             cout << "It's palindrom! TENET, YOU UNDERSTAND?\?!\n\n";
         else
