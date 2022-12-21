@@ -45,8 +45,7 @@ bool palindrom(std::string str)
     {
         if (tolower(str[i]) != tolower(str[size]))
             return false;
-        else
-            i++;
+        i++;
     }
     return true;
 }

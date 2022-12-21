@@ -31,7 +31,7 @@ int main()
         if (word.size() == 0)
         {
             cout << "I SAY ENTER SOMETHING MOTHERFUCKER<q to quit>: ";
-            cin >> word;
+            getline(cin, word);
             continue;
         }
 
@@ -60,7 +60,7 @@ bool palindrom(std::string str)
     }
     i = 0;
     int size = str.size();
-    if (size == 0);
+    if (size == 0)
         return 0;
     for (i; i < --size; i++) // --size - последний символ строки, каждая следующая проверка требует переход к предыдущему символу
     {
