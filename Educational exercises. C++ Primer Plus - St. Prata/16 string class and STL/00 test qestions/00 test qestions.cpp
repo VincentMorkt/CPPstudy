@@ -109,7 +109,10 @@ void tolower_str(std::string &st)
 */
 // 10. Если в коде из листинга 16.9 использовать list вместо vector, то какие части
 // программы станут некорректными? Легко ли они могут быть исправлены? Если да, то как?
-// лучше бы использовать map, где ключём будет тайтл. 
+
+// некоректными станут функции сортировки, вместо них необходимо будет использоваеть метод сортировки
+// функция random_shuffle также станет недоступна, и аналога для неё среди метдодов списка нет.
+// всё из за использования функциями итераторов свободного доступа, которые не предоставляет list
 
 // vect3.cpp -- using STL functions
 #include <iostream>
@@ -142,7 +145,7 @@ int main()
               << "Rating\tBook\n";
         for_each(books.begin(), books.end(), ShowReview); 
 
-        sort(books.begin(), books.end()); 
+        books.sort(); // необходимо использовать books.sort();
         cout << "Sorted by title:\nRating\tBook\n";
         for_each(books.begin(), books.end(), ShowReview);
 
@@ -150,7 +153,8 @@ int main()
         cout << "Sorted by rating:\nRating\tBook\n";
         for_each(books.begin(), books.end(), ShowReview);
 
-        random_shuffle(books.begin(), books.end());
+        random_shuffle(books.begin(), books.end()); 
+        // невозможно применить к list, поскольку список не имеет иттератора произвольного доступа, и собственного альтернативного метода.
         cout << "After shuffling:\nRating\tBook\n";
         for_each(books.begin(), books.end(), ShowReview);
     }
