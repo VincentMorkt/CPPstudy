@@ -20,7 +20,7 @@ int main(void)
     cin.get();
     highfink hf2;
     hf2.SetAll();
-    cout << "Using an abstr_emp * pointer:\n"; // Исполь зование указателя abstr_eтp *
+    cout << "Using an abstr_emp * pointer:\n"; // Использование указателя abstr_eтp *
     abstr_emp *tri[4] = {&em, &fi, &hf, &hf2};
     for (int i = 0; i < 4; i++)
         tri[i]->ShowAll();
