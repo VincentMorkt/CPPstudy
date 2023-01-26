@@ -19,48 +19,75 @@
 // его в десятичной, восьмеричной и шестнадцатеричной формах. Отобразите все
 // формы в одной и той же строке, в полях шириной по 15 символов, с применением префиксов С++ для оснований систем счисления.
 
-..........................
-
 // 7. Напишите программу, которая запрашивает следующую информацию и форматирует ее, как показано ниже:
 // Enter your name: Billy Gruff
 // Enter your hourly wages: 12
 // Enter number of hours worked: 7.5
 // First format:
-//                 Billy Gruff: $  12.00:   7.5
+//                 Billy Gruff : $    12.00:  7.5
 // Second format:
-// Billy Gruff                 :$12.00    :7.5
+// Billy Gruff                 : $12.00    :7.5
 
-// 8. Пусть имеется следующая программа:
-// rq17-8 . cpp
 #include <iostream>
+#include <string>
+#include <iomanip>
 int main()
 {
     using namespace std;
-    char ch;
-    int ctl = 0;
-    cin >> ch;
-    while (ch != 'q')
-    {
-        ctl++;
-        cin >> ch;
-    }
-    int ct2 = 0;
-    cin.get(ch);
-    while (ch != 'q')
-    {
-        ct2++;
-        cin.get(ch);
-    }
-    cout << "ctl = " << ctl << "; ct2 = " << ct2 << "\n";
-    return 0;
+    string name;
+    double hourly_wages;
+    double hours_worked;
+    cout << "Enter your name: ";
+    getline(cin, name);
+    cout << "Enter your hourly wages: ";
+    cin >> hourly_wages;
+    cout << "Enter number of hours worked: ";
+    cin >> hours_worked;
+    cout << "First format:\n"
+         << setw(26) << right << name << " : $" << fixed << setprecision(2) << setw(9) << hourly_wages << ":" << setprecision(1) << setw(6) << hours_worked << endl 
+         << setw(26) << left << name << " : $" << fixed << setprecision(2) << setw(9) << hourly_wages << ":" << setprecision(1) << setw(6) << hours_worked << endl;
+    cin.get();
+    cin.get();
 }
-// Что она напечатает, если получит следующий ввод:
-// I see а q<Enter>
-// I see а q<Enter>
-// Здесь<Enter> означает нажатие одноименной клавиши.
 
-// 9. Оба следующих оператора читают и отбрасывают символы, вплоть до конца строки,
-// включая его. Чем различается их поведение?
-while (cin.get() ! = '\n')
-    continue;
-cin.ignore(80, '\n');
+
+// ............................
+
+// // 8. Пусть имеется следующая программа:
+// // rq17-8 . cpp
+// #include <iostream>
+// int main()
+// {
+//     using namespace std;
+//     char ch;
+//     int ctl = 0;
+//     cin >> ch;
+//     while (ch != 'q')
+//     {
+//         ctl++;
+//         cin >> ch;
+//     }
+//     int ct2 = 0;
+//     cin.get(ch);
+//     while (ch != 'q')
+//     {
+//         ct2++;
+//         cin.get(ch);
+//     }
+//     cout << "ctl = " << ctl << "; ct2 = " << ct2 << "\n";
+//     return 0;
+// }
+// // Что она напечатает, если получит следующий ввод:
+// // I see а q<Enter>
+// // I see а q<Enter>
+// // Здесь<Enter> означает нажатие одноименной клавиши.
+
+// // сначала программа читает символы с потока, без учёта пробельных, и считает количество операций чтения, пока не прочитает 'q'
+// // после программа читает все символы с потока и считает количество операций чтения, пока не прочитает 'q'
+// // в результате программа выдаст "ctl = 5; ct2 = 8"
+
+// // 9. Оба следующих оператора читают и отбрасывают символы, вплоть до конца строки,
+// // включая его. Чем различается их поведение?
+// while (cin.get() ! = '\n') // читает и отбрасывает все символы, пока не встретит '\n'
+//     continue;
+// cin.ignore(80, '\n'); // читает и отбрасывает до 80 символов, пока не встретит '\n'
