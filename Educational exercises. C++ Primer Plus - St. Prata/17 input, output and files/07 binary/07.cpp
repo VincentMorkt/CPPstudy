@@ -26,7 +26,6 @@ public:
 
 void GetStrs(std::ifstream &fin, std::vector<std::string> &vect)
 {
-    std::cout << "GetStrs working..."; // !
     int numstr = 0;
     vect.clear();
     while (fin)
