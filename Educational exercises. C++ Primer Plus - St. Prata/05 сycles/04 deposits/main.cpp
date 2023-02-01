@@ -10,14 +10,14 @@
 #include <iostream>
 int main ()
 {   
-    const double StartDeposit = 100;     // объявление констант, необходимых для расчётов. Константы отражают стартовое значение для обоих депозитов, а также коэфициенты роста.
+    const double StartDeposit = 100;    // объявление констант, необходимых для расчётов. Константы отражают стартовое значение для обоих депозитов, а также коэфициенты роста.
     const double DafnaInterest = 0.1;   
     const double KleoInterest = 0.05;
     double dafnaDeposit = StartDeposit, kleoDeposit = StartDeposit; // объявление переменных, отражающих состояние депозитов. Переменные инициализированны значением нулевого года.
-    int year=0;                         // объявление переменной, отражающей год, для подсчёта шагов цикла и вывода этого значения на экран
+    int year = 0;                       // объявление переменной, отражающей год, для подсчёта шагов цикла и вывода этого значения на экран
     std::cout << "\tYear \t | Dafna deposit |  Kleo deposit" << std::endl;  // вывод строки, которая является заголовком таблицы
     std::cout << "\t "<< year <<"\t\t" << dafnaDeposit <<"\t\t" << kleoDeposit << std::endl;    // вывод значений нулевого года 
-    while (dafnaDeposit>=kleoDeposit)   // объявление цикла while. 
+    while (dafnaDeposit >= kleoDeposit)   // объявление цикла while. 
     {
         year++;                         // я не стал использовать for и помещать год в обновляющее выражение, поскольку он не связан с проверочным
         dafnaDeposit += StartDeposit*DafnaInterest; // расчёт состояния депозита Дафны
