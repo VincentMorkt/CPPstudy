@@ -123,3 +123,6 @@ void printApplicant2(const applicant *app)
 void f1(applicant *a);
 const char *f2(const applicant *a1, const applicant *a2);
 // Объявите p1 как указатель на функцию f1, а р2 - как указатель на f2. Объявите указатель на массив из десяти указателей того же типа, что и р2. Воспользуйтесь typedef.
+
+auto p1 = &(f1);
+const char *(*p2)(const applicant *a1, const applicant *a2) = &(f2);
