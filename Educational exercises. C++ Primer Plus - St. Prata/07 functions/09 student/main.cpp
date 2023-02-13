@@ -6,7 +6,6 @@ using namespace std;
 const int SLEN = 30;
 struct student
 {
-
     char fullname[SLEN];
     char hobby[SLEN];
     int ooplevel;
